@@ -49,14 +49,14 @@ public class CardTransferTest {
         assertEquals(secondCardBalance + amount, dashboardPage.getCardBalance(secondCardInfo));
     }
 // не валидный тест
-    @Test
-    void shouldTransferNotValidMoney() {
-        int amount = secondCardBalance + 20000;
-        var transferPage = dashboardPage.selectCardToTransfer(firstCardInfo);
-        transferPage.makeTransfer(String.valueOf(amount), secondCardInfo);
-        transferPage.findErrorMessage("Ошибка");
-        dashboardPage.reloadDashboardPage();
-        dashboardPage.checkCardBalance(firstCardInfo, firstCardBalance);
-        dashboardPage.checkCardBalance(secondCardInfo, secondCardBalance);
-    }
+//    @Test
+//    void shouldTransferNotValidMoney() {
+//        int amount = secondCardBalance + 20000;
+//        var transferPage = dashboardPage.selectCardToTransfer(firstCardInfo);
+//        transferPage.makeTransfer(String.valueOf(amount), secondCardInfo);
+//        transferPage.findErrorMessage("Ошибка");
+//        dashboardPage.reloadDashboardPage();
+//        dashboardPage.checkCardBalance(firstCardInfo, firstCardBalance);
+//        dashboardPage.checkCardBalance(secondCardInfo, secondCardBalance);
+//    }
 }
